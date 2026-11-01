@@ -1,0 +1,15 @@
+# Face recognition core
+insightface==0.7.3
+onnxruntime>=1.18.0          # CPU build. NVIDIA GPU: pip uninstall onnxruntime && pip install onnxruntime-gpu
+opencv-python>=4.9.0
+numpy>=1.26.0,<3
+Pillow>=10.0.0
+
+# ML micro-service
+flask>=3.0.0
+waitress>=3.0.0
+
+# Utilities / scripts
+requests>=2.31.0
+python-dotenv>=1.0.0
+pandas>=2.2.0

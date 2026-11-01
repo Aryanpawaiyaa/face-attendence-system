@@ -1,0 +1,31 @@
+// ============================================================================
+//  FaceAttend Pro - Realtek Ameba-IoT RTL8735BDM (AMB82-Mini) Configuration
+//  COPY THIS FILE TO config.h AND UPDATE WITH YOUR ENVIRONMENT CREDENTIALS
+// ============================================================================
+#pragma once
+
+// 1. Wi-Fi Network Credentials (RTL8735BDM supports both 2.4GHz & 5GHz Wi-Fi)
+#define WIFI_SSID        "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD    "YOUR_WIFI_PASSWORD"
+
+// 2. Attendance Server Host IP (The PC running the Dashboard)
+//    Find your PC IP by typing 'ipconfig' in command prompt
+#define SERVER_HOST      "192.168.1.100"
+#define SERVER_PORT      5001
+
+// 3. Device Identification & Authentication
+//    Obtained when registering the camera in Dashboard -> Cameras & AMB82
+#define DEVICE_CODE      "AMB82-GATE-01"
+#define DEVICE_API_KEY   "PASTE_THE_API_KEY_SHOWN_AT_REGISTRATION"
+
+// 4. Video Transmission Modes over Wi-Fi
+//    PUSH_FRAMES: Captures JPEG and transmits over HTTP POST to /api/devices/frame
+//    ENABLE_RTSP: Serves real-time H.264 video stream over Wi-Fi at rtsp://<board-ip>:554
+#define PUSH_FRAMES       1       // 1 = push JPEG frames to server over Wi-Fi
+#define ENABLE_RTSP       1       // 1 = also serve rtsp://<board-ip>:554
+
+// 5. Ultra-Low-Latency Performance Parameters
+//    350ms interval = ~3 FPS over Wi-Fi. Combined with HTTP Keep-Alive and
+//    first-frame recognition, verification completes in < 400ms!
+#define FRAME_INTERVAL_MS 350     // Push interval in milliseconds (300 - 500ms recommended)
+#define HEARTBEAT_MS      60000   // Keep-alive status ping for device health monitoring

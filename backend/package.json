@@ -1,0 +1,53 @@
+{
+  "name": "faceattend-pro-backend",
+  "version": "2.0.0",
+  "description": "FaceAttend Pro - Express + MongoDB backend for AI face-recognition attendance with AMB82 Mini camera integration.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --watch src src/server.js",
+    "seed": "node scripts/seed.js",
+    "test": "node --test",
+    "lint": "eslint src --ext .js"
+  },
+  "keywords": [
+    "attendance",
+    "face-recognition",
+    "amb82",
+    "insightface",
+    "express",
+    "mongodb"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.2.0",
+    "helmet": "^7.1.0",
+    "jpeg-js": "^0.4.4",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.15.0",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

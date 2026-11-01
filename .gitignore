@@ -1,0 +1,171 @@
+# ==============================================================================
+# FaceAttend Pro - Production Git Ignore Configuration
+# Protects sensitive data, credentials, biometrics, large bundles & temp files
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment Variables & Secret Credentials
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.env
+backend/.env
+frontend/.env
+electron-app/.env
+
+# Always track example/copy environment templates
+!.env.example
+!.env.copy
+!backend/.env.example
+!backend/.env.copy
+!frontend/.env.example
+!frontend/.env.copy
+!*.env.example
+!*.env.copy
+
+# Cryptographic Keys & Certificates
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+
+# Firmware private Wi-Fi credentials & device secret keys
+firmware/**/config.h
+!firmware/**/config.h.example
+
+# ------------------------------------------------------------------------------
+# 2. Local Databases, Biometric Data & Embeddings
+# ------------------------------------------------------------------------------
+data/local_db.json
+data/biometrics.json
+data/**/*.json
+data/*.db
+data/**/*.db
+data/*.sqlite*
+data/**/*.sqlite*
+data/**/*.npz
+data/**/*.npy
+
+# Preserve empty data directories via .gitkeep
+data/raw/**
+!data/raw/**/
+!data/raw/**/.gitkeep
+data/people/**
+!data/people/**/
+!data/people/**/.gitkeep
+data/embeddings/**
+!data/embeddings/**/
+!data/embeddings/**/.gitkeep
+data/attendance/**
+!data/attendance/**/
+!data/attendance/**/.gitkeep
+data/mappings/**
+!data/mappings/**/
+!data/mappings/**/.gitkeep
+data/enrollments/**
+!data/enrollments/**/
+!data/enrollments/**/.gitkeep
+
+# ------------------------------------------------------------------------------
+# 3. Uploaded Images & Camera Captures (Facial Data / Unknown Faces)
+# ------------------------------------------------------------------------------
+uploads/**
+!uploads/**/
+!uploads/**/.gitkeep
+
+backend/uploads/**
+!backend/uploads/**/
+!backend/uploads/**/.gitkeep
+
+# ------------------------------------------------------------------------------
+# 4. Large Bundles, Build Outputs & Artifacts
+# ------------------------------------------------------------------------------
+backend/server.bundle.js
+*.bundle.js
+*.bundle.js.map
+dist/
+build/
+out/
+coverage/
+frontend/dist/
+backend/dist/
+electron-app/dist/
+electron-app/build/
+pr-smart-attendance.html
+
+# ------------------------------------------------------------------------------
+# 5. AI / ML Models & Pretrained Weights (InsightFace, ONNX, etc.)
+# ------------------------------------------------------------------------------
+models/**
+!models/**/
+!models/**/.gitkeep
+*.onnx
+*.pth
+*.pt
+*.tflite
+*.weights
+*.h5
+*.bin
+.insightface/
+insightface/
+
+# ------------------------------------------------------------------------------
+# 6. Node Dependencies & Package Managers
+# ------------------------------------------------------------------------------
+node_modules/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ------------------------------------------------------------------------------
+# 7. Python Virtual Environments, Bytecode & Cache
+# ------------------------------------------------------------------------------
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# ------------------------------------------------------------------------------
+# 8. Operating System & IDE Files
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+__MACOSX/
+.idea/
+*.swp
+*.swo
+*~
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# VS Code workspace state (Keep team settings.json if desired)
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+
+# ------------------------------------------------------------------------------
+# 9. Logs & Runtime Temporary Files
+# ------------------------------------------------------------------------------
+*.log
+logs/
+temp/
+tmp/

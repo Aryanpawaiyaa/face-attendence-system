@@ -1,0 +1,48 @@
+{
+  "name": "faceattend-pro-desktop",
+  "version": "2.1.0",
+  "description": "FaceAttend Pro - Native Desktop AI Attendance System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.faceattend.pro",
+    "productName": "FaceAttend Pro",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "win": {
+      "target": [
+        "dir",
+        "portable"
+      ],
+      "icon": "icon.ico"
+    },
+    "portable": {
+      "artifactName": "FaceAttend-Pro-v2.1-Portable.exe"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "../backend/**/*",
+      "!../backend/node_modules/**/*",
+      "../frontend/dist/**/*"
+    ]
+  },
+  "keywords": [
+    "attendance",
+    "face-recognition",
+    "electron"
+  ],
+  "author": "FaceAttend Team",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.18.0",
+    "wait-on": "^9.5.1"
+  }
+}
